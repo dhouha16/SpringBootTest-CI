@@ -6,12 +6,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="TimesheetWaves-Haifa" />
         <module name="timesheet-ci" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="TimesheetWaves-Haifa" options="-parameters" />
       <module name="timesheet-ci" options="-parameters" />
     </option>
   </component>
