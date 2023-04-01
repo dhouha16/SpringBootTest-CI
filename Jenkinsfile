@@ -70,7 +70,7 @@ pipeline {
                       // Since unit testing is out of the scope we skip them
                 bat "mvn deploy:deploy-file -DgroupId=tn.esprit.spring -DartifactId=timesheet-ci -Dversion=1.0 -DgeneratePom=true -Dpackaging=jar -DrepositoryId=deploymentRepo -Durl=http://localhost:8082/repository/maven-releases/ -Dfile=target/timesheet-ci-1.0.jar"
                         }
-        }
+                }
 
     }
 
