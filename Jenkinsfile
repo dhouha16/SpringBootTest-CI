@@ -32,12 +32,12 @@ pipeline {
         			steps{
         				bat "mvn package -DskipTests=true"
         			}
-        			post {
-                    success {
-                       jacoco()
-                       junit '**/target/surefire-reports/TEST-*.xml'
-                    }
-                    }
+//         			post {
+//                     success {
+//                        jacoco()
+//                        junit '**/target/surefire-reports/TEST-*.xml'
+//                     }
+//                     }
         		}
 
 
