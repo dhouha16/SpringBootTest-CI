@@ -63,13 +63,15 @@ pipeline {
                    	bat "mvn sonar:sonar -Dsonar.login=squ_db85c1e54c0b219a656e9a1bc387934b0c2517a6"
                 	 }
                	}
-    }
 
         stage("Deploiement dans nexus ") {
-                     steps{
-                      // If you are using Windows then you should use "bat" step
-                      // Since unit testing is out of the scope we skip them
-                bat "mvn deploy:deploy-file -DgroupId=tn.esprit.spring -DartifactId=timesheet-ci -Dversion=1.0 -DgeneratePom=true -Dpackaging=jar -DrepositoryId=deploymentRepo -Durl=http://localhost:8080/repository/maven-releases/ -Dfile=target/timesheet-ci-1.0.jar"
-                        }
-                    }
+                             steps{
+                              // If you are using Windows then you should use "bat" step
+                              // Since unit testing is out of the scope we skip them
+                        bat "mvn deploy:deploy-file -DgroupId=tn.esprit.spring -DartifactId=timesheet-ci -Dversion=1.0 -DgeneratePom=true -Dpackaging=jar -DrepositoryId=deploymentRepo -Durl=http://localhost:8080/repository/maven-releases/ -Dfile=target/timesheet-ci-1.0.jar"
+                                }
+                            }
+    }
+
+
 }
