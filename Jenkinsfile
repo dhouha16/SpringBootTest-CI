@@ -32,23 +32,31 @@ pipeline {
         			steps{
         				bat "mvn package -DskipTests=true"
         			}
+        			post {
+                    success {
+                       jacoco()
+                       junit '**/target/surefire-reports/TEST-*.xml'
+                    }
+                    }
         		}
+
+
         stage ("Lancement des Tests Unitaires"){
         		steps{
         			bat "mvn test"
         				}
         		}
 
-        stage('Jacoco Test '){
-        			steps{
-        				step([$class: 'JacocoPublisher',
-              					execPattern: 'target/*.exec',
-              					classPattern: 'target/classes',
-              					sourcePattern: 'src/main/java',
-              					exclusionPattern: 'src/test*'
-        				])
-        			}
-        		}
+//         stage('Jacoco Test '){
+//         			steps{
+//         				step([$class: 'JacocoPublisher',
+//               					execPattern: 'target/*.exec',
+//               					classPattern: 'target/classes',
+//               					sourcePattern: 'src/main/java',
+//               					exclusionPattern: 'src/test*'
+//         				])
+//         			}
+//         		}
 
         stage("Analyse avec Sonar ") {
                 	steps {
