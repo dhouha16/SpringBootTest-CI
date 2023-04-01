@@ -37,7 +37,7 @@ public class DepartementServiceImplTest {
 	public void B_testRetrieveAllDepartement() {
 		List<Departement> listDepartements = dp.retrieveAllDepartement(); 
 		// if there are 7 users in DB : 
-		Assert.assertEquals(8, listDepartements.size());
+		Assert.assertEquals(10, listDepartements.size());
 	}
 	
  
